@@ -24,9 +24,9 @@ from util.DBManager import get_table_count
 
 log = LogHandler('mailsend')
 _sender_address = 'wanglin@ruifucredit.com'
-_reciver_address = 'wanglin@ruifucredit.com,luoyunfei@ruifucredit.com,wangyuanguo@ruifucredit.com,zhangyao@ruifucredit.com,taoliangpeng@ruifucredit.com'
+_reciver_address = 'wanglin@ruifucredit.com'
 _subject = u'平台报告-【%s】' % datetime.datetime.now().strftime('%Y-%m-%d')
-_passwd = '3Edc4rfv'
+_passwd = 'passwd'
 _smtpadd = 'smtp.ruifucredit.com'
 
 
