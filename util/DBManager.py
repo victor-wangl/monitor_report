@@ -45,24 +45,14 @@ class DBManager(object):
 
 _dbManager = DBManager()
 
-# tables = [{'table': 'CRERISK.PAYCUSTOMER', 'desc': u'客户信息表'},
-#           {'table': 'CRERISK.PAYUSER', 'desc': u'用户表'},
-#           # {'table': 'CRERISK.PAYJNLS', 'desc': u'手刷交易表'},
-#           {'table': 'CRERISK.PAYBINDBANKCARD2', 'desc': u'绑定卡表'},
-#           {'table': 'RMPS.TM_APP_MAIN', 'desc': u'信审主表'},
-#           {'table': 'RMPS.TM_APP_PRIM_APP_INFO', 'desc': u'申请人信息表'},
-#           {'table': 'RMPS.TM_CONTRACT_LIST', 'desc': u'申请人通讯录表'},
-#           {'table': 'SIDES.C_CALL_DETAILS', 'desc': u'申请人通话详单表'}, ]
-
-tables = [{'table': 'PAYCUSTOMER', 'desc': u'客户信息表'},
-          {'table': 'PAYUSER', 'desc': u'用户表'},
-          # {'table': 'CRERISK.PAYJNLS', 'desc': u'手刷交易表'},
-          {'table': 'PAYBINDBANKCARD2', 'desc': u'绑定卡表'},
-          # {'table': 'RMPS.TM_APP_MAIN', 'desc': u'信审主表'},
-          # {'table': 'RMPS.TM_APP_PRIM_APP_INFO', 'desc': u'申请人信息表'},
-          # {'table': 'RMPS.TM_CONTRACT_LIST', 'desc': u'申请人通讯录表'},
-          # {'table': 'SIDES.C_CALL_DETAILS', 'desc': u'申请人通话详单表'},
-          ]
+ tables = [{'table': 'TEST.PAYCUSTOMER', 'desc': u'客户信息表'},
+           {'table': 'TEST.PAYUSER', 'desc': u'用户表'},
+           # {'table': 'TEST.PAYJNLS', 'desc': u'手刷交易表'},
+           {'table': 'TEST.PAYBINDBANKCARD2', 'desc': u'绑定卡表'},
+           {'table': 'TEST.TM_APP_MAIN', 'desc': u'信审主表'},
+           {'table': 'TEST.TM_APP_PRIM_APP_INFO', 'desc': u'申请人信息表'},
+           {'table': 'TEST.TM_CONTRACT_LIST', 'desc': u'申请人通讯录表'},
+           {'table': 'TEST.C_CALL_DETAILS', 'desc': u'申请人通话详单表'}, ]
 
 
 def getConn():
