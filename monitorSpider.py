@@ -27,12 +27,12 @@ node = {'name': '-', 'lastContact': '-', 'xferaddr': '-', 'adminState': '-', 'ca
 
 
 def get_info():
-    url = 'http://12.3.10.190:50070/jmx?qry=Hadoop:service=NameNode,name=NameNodeInfo'
+    url = 'http://192.168.88.1:50070/jmx?qry=Hadoop:service=NameNode,name=NameNodeInfo'
     try:
         r = requests.get(url=url)
     except Exception as ex:
         print(ex)
-        url = url.replace('120', '130')
+        url = url.replace('88.1', '88.2')
         r = requests.get(url=url)
     result = dict()
     content = json.loads(r.content)
