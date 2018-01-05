@@ -1,1 +1,144 @@
+<html>
+<head><h1>平台报告(测试版)</h1></head>
+<style>
+    table {
+        border: 1px solid #7e99cc;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 auto;
+    }
 
+    table tr {
+        border: 1px solid #7e99cc;
+        padding: 5px;
+    }
+
+    table th, table td {
+        padding: 10px;
+        text-align: center;
+        color: aliceblue;
+    }
+
+    table th {
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        table {
+            border: 0;
+        }
+
+        table thead {
+            display: none;
+        }
+
+        table tr {
+            margin-bottom: 10px;
+            display: block;
+            border-bottom: 2px solid #7e99cc;
+        }
+
+        table td {
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            border-bottom: 1px dotted #7e99cc;
+        }
+
+        table td:last-child {
+            border-bottom: 0;
+        }
+
+        table td:before {
+            content: attr(data-label);
+            float: left;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+</style>
+<body>
+<h2>集群监控报告</h2>
+<table>
+    <thead>
+    <tr>
+        <th>集群总容量</th>
+        <th>集群使用容量</th>
+        <th>集群剩余容量</th>
+        <th>集群使用率</th>
+        <th>使用文件块数量</th>
+        <th>生成文件数量</th>
+        <th>hadoop版本</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ info.Total }}</td>
+        <td>{{ info.Used }}</td>
+        <td>{{ info.Free }}</td>
+        <td>{{ info.PercentUsed }}</td>
+        <td>{{ info.TotalBlocks }}</td>
+        <td>{{ info.TotalFiles }}</td>
+        <td>{{ info.SoftwareVersion }}</td>
+    </tr>
+    </tbody>
+</table>
+<h2>节点监控报告</h2>
+<table>
+    <thead>
+    <tr>
+        <th>节点</th>
+        <th>心跳间隔时间</th>
+        <th>IP</th>
+        <th>节点状态</th>
+        <th>磁盘总容量</th>
+        <th>已使用磁盘容量</th>
+        <th>剩余磁盘容量</th>
+        <th>磁盘使用率</th>
+        <th>系统版本</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for data in datainfo %}
+    <tr>
+        <td>{{ data.name }}</td>
+        <td>{{ data.lastContact }}</td>
+        <td>{{ data.xferaddr }}</td>
+        <td>{{ data.adminState }}</td>
+        <td>{{ data.capacity }}</td>
+        <td>{{ data.usedSpace }}</td>
+        <td>{{ data.remaining }}</td>
+        <td>{{ data.blockPoolUsedPercent }}</td>
+        <td>{{ data.version }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h2>数据监控报告</h2>
+<table>
+    <thead>
+    <tr>
+        <th>表名</th>
+        <th>中文名</th>
+        <th>表数据量</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for tdata in tableinfo %}
+    <tr>
+        <td>{{ tdata.table }}</td>
+        <td>{{ tdata.desc }}</td>
+        <td>{{ tdata.count }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
